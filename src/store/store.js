@@ -2,6 +2,7 @@ import { init } from '@rematch/core';
 import persistPlugin from '@rematch/persist';
 import storage from 'redux-persist/lib/storage';
 import createLoadingPlugin from '@rematch/loading';
+import alert from './notification/alert';
 
 const persistConfig = {
     key: 'root',
@@ -10,7 +11,7 @@ const persistConfig = {
 };
 
 const store = init({
-    models: {},
+    models: {alert},
     plugins: [persistPlugin(persistConfig), createLoadingPlugin()]
 });
 
